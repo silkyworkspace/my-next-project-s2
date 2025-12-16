@@ -7,7 +7,7 @@ import Image from "next/image";
 
 type Props = {
     data: News;
-}
+};
 
 export default function Article({ data }: Props) {
     return (
@@ -32,14 +32,12 @@ export default function Article({ data }: Props) {
                     height={data.thumbnail.height}
                 />
             )}
-            {/* microCMSからは、リッチテキストでの投稿にあるのでそのHTMLがうめこまれるという */}
             <div
                 className={styles.content}
                 dangerouslySetInnerHTML={{
                     __html: data.content,
                 }}
             />
-
         </main>
-    )
+    );
 }
