@@ -3,6 +3,7 @@ import { getNewsList } from "@/app/_libs/microcms"
 import { notFound } from "next/navigation";
 import { NEWS_LIST_LIMIT } from '@/app/_constants';
 import Pagination from "@/app/_components/Pagination/Pagination";
+import SearchField from "@/app/_components/SearchField/SearchField";
 
 
 type Props = {
@@ -34,6 +35,7 @@ export default async function Page({ params }: Props) {
     return (
         <div>
             {/* {JSON.stringify(news)} */}
+            <SearchField />
             <NewsList news={news} />
             <Pagination totalCount={totalCount} current={page} />
         </div>
